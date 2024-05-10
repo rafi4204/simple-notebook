@@ -8,15 +8,15 @@ class HomeCoordinator(
     val viewModel: HomeViewModel,
     val navigateToAddNoteItemScreen: () -> Unit = {}
 ) {
-    val uiState = viewModel.homeStateFlow
-    fun navigateToAddNoteItem() = navigateToAddNoteItemScreen
+    val uiState = viewModel.stateFlow
 }
 
 @Composable
 fun rememberHomeCoordinator(
-    homeViewModel: HomeViewModel = viewModel()
+    homeViewModel: HomeViewModel = viewModel(),
+    navigateToAddNoteItemScreen: () -> Unit
 ): HomeCoordinator {
     return remember(homeViewModel) {
-        HomeCoordinator(homeViewModel)
+        HomeCoordinator(homeViewModel, navigateToAddNoteItemScreen)
     }
 }

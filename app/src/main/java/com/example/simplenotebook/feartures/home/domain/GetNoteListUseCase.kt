@@ -7,6 +7,6 @@ import javax.inject.Inject
 class GetNoteListUseCase @Inject constructor(private val noteListRepository: GetNoteListRepository) {
 
     suspend operator fun invoke() = suspendRunCatching {
-        noteListRepository.noteItems
+        noteListRepository.getNoteList()
     }
 }

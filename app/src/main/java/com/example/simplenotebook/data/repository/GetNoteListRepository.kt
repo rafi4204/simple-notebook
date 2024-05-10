@@ -7,7 +7,12 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GetNoteListRepository @Inject constructor(private val noteDao: NoteDao) {
-    val noteItems: Flow<List<NoteItem>> = noteDao.getAll()
+    //val noteItems: Flow<List<NoteItem>> = noteDao.getAll()
+
+    @WorkerThread
+    suspend fun getNoteList(): List<NoteItem> {
+        return noteDao.getAll()
+    }
 
     @WorkerThread
     suspend fun insert(noteItem: NoteItem) {
@@ -17,7 +22,6 @@ class GetNoteListRepository @Inject constructor(private val noteDao: NoteDao) {
     suspend fun getNoteById(id: Int): NoteItem {
         return noteDao.findById(id)
     }
-
 
 
 }

@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface NoteDao {
     @Query("SELECT * FROM noteitem")
-    fun getAll(): Flow<List<NoteItem>>
+    suspend fun getAll(): List<NoteItem>
 
     @Query("SELECT * FROM noteitem WHERE id IN (:userIds)")
     suspend fun loadAllByIds(userIds: IntArray): List<NoteItem>
