@@ -1,6 +1,7 @@
 package com.example.simplenotebook.feartures.home.ui
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
 
@@ -8,8 +9,11 @@ import androidx.compose.runtime.remember
 fun HomeRoute(
     homeCoordinator: HomeCoordinator
 ) {
-    val uiState = homeCoordinator.viewModel.homeStateFlow.collectAsState().value
+    val uiState = homeCoordinator.uiState.collectAsState().value
     val actions = rememberHomeScreenActions(homeCoordinator)
+    LaunchedEffect(Unit) {
+        homeCoordinator.viewModel.getAllNotes()
+    }
     HomeScreen(
         homeState = uiState,
         actions = actions

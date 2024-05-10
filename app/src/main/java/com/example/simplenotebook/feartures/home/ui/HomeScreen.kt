@@ -45,7 +45,7 @@ fun HomeScreen(homeState: HomeState = HomeState(), actions: HomeActions = HomeAc
                 .clip(CircleShape)
                 .background(color = Color.Blue)
                 .clickable {
-                    actions.navigateToAddNoteItemScreen()
+                    actions.navigateToAddNoteItemScreen.invoke()
                 },
             contentAlignment = Alignment.Center
         ) {
@@ -54,6 +54,7 @@ fun HomeScreen(homeState: HomeState = HomeState(), actions: HomeActions = HomeAc
                 contentDescription = null,
                 tint = Color.White,
                 modifier = Modifier.clickable {
+                   actions.navigateToAddNoteItemScreen.invoke()
                 })
         }
     },
