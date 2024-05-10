@@ -3,7 +3,6 @@ package com.example.simplenotebook.data.repository
 import androidx.annotation.WorkerThread
 import com.example.simplenotebook.data.dao.NoteDao
 import com.example.simplenotebook.data.model.NoteItem
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GetNoteListRepository @Inject constructor(private val noteDao: NoteDao) {
