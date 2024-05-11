@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     val homeCoordinator =
                         rememberHomeCoordinator(navigateToAddNoteItemScreen = {
                             navController.navigate(
-                                Route.ADD_NOTE_ITEM.route
+                                 Route.ADD_NOTE_ITEM.route
                             )
                         })
                     val addNoteItemCoordinator =
