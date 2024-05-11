@@ -40,3 +40,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - name: AI Code Review Action
+        uses: freeedcom/ai-codereviewer@v2.7.0
+                 
