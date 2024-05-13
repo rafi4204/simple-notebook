@@ -79,7 +79,7 @@ dependencies {
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:2.6.1")
     implementation("com.google.dagger:hilt-android:2.48.1")
-    ksp("com.google.dagger:hilt-android-compiler:2.48.1")
+    ksp("com.google.dagger:hilt-android-compiler:2.51.1")
     ksp("com.google.dagger:dagger-compiler:2.48.1") // Dagger compiler
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
